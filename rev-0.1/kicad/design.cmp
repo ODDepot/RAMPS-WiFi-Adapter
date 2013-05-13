@@ -1,0 +1,108 @@
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Mon 13 May 2013 11:36:01 AM CDT
+
+BeginCmp
+TimeStamp = /5187DC43;
+Reference = AE1;
+ValeurCmp = ANTENNA;
+IdModule  = 18G_MONOPOLE_MOUNT;
+EndCmp
+
+BeginCmp
+TimeStamp = /51857021;
+Reference = C1;
+ValeurCmp = T491A475K016AT;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F3E3;
+Reference = D1;
+ValeurCmp = APT2012SGC;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F3FC;
+Reference = D2;
+ValeurCmp = APT2012YC;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F415;
+Reference = D3;
+ValeurCmp = APT2012EC;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /51854F35;
+Reference = P1;
+ValeurCmp = AUX-4_INTERFACE;
+IdModule  = SIL-18;
+EndCmp
+
+BeginCmp
+TimeStamp = /51854F4E;
+Reference = P2;
+ValeurCmp = I2C_INTERFACE;
+IdModule  = SIL-4;
+EndCmp
+
+BeginCmp
+TimeStamp = /51854F10;
+Reference = P3;
+ValeurCmp = ENABLE_JUMPERS;
+IdModule  = PIN_ARRAY_2X2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F222;
+Reference = R1;
+ValeurCmp = CR0805-FX-2400ELF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F23B;
+Reference = R2;
+ValeurCmp = CR0805-FX-2400ELF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187F254;
+Reference = R3;
+ValeurCmp = CR0805-FX-2400ELF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5187D822;
+Reference = U1;
+ValeurCmp = RN-171;
+IdModule  = RN-171;
+EndCmp
+
+BeginCmp
+TimeStamp = /516C6DA7;
+Reference = U2;
+ValeurCmp = TXB0106PWR;
+IdModule  = TSSOP16;
+EndCmp
+
+BeginCmp
+TimeStamp = /516C3366;
+Reference = U3;
+ValeurCmp = TLV2452CDGKR;
+IdModule  = MSOP_8;
+EndCmp
+
+BeginCmp
+TimeStamp = /516C448D;
+Reference = U4;
+ValeurCmp = TC1262-3.3VDB;
+IdModule  = SOT223;
+EndCmp
+
+EndListe

@@ -1,0 +1,595 @@
+EESchema Schematic File Version 2  date Mon 13 May 2013 11:35:52 AM CDT
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:_roving_networks_
+LIBS:_microchip_
+LIBS:_vishay_
+LIBS:_panasonic_
+LIBS:_texas_instruments_
+LIBS:_headers_
+LIBS:_kemet_
+LIBS:_bourns_
+LIBS:_kingbright_
+LIBS:_special_
+LIBS:design-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "RAMPS WiFi Adapter"
+Date "13 may 2013"
+Rev ".1"
+Comp "ODDepot.com, Finucane Design LLC"
+Comment1 "License: Creative Commons Attribution-ShareAlike (CC 3.0 BY-SA)"
+Comment2 "Provide wireless networking for RepRap's RAMPS (Arduino Mega Pololu Shield) controller"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L GND #PWR01
+U 1 1 5164341C
+P 10900 1400
+F 0 "#PWR01" H 10900 1400 30  0001 C CNN
+F 1 "GND" H 10900 1330 30  0001 C CNN
+	1    10900 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 51643453
+P 9100 1400
+F 0 "#PWR02" H 9100 1400 30  0001 C CNN
+F 1 "GND" H 9100 1330 30  0001 C CNN
+	1    9100 1400
+	1    0    0    -1  
+$EndComp
+Text Label 8250 1000 0    50   ~ 0
+5V
+Text Label 8250 1200 0    50   ~ 0
+3.3V
+$Comp
+L GND #PWR03
+U 1 1 516435C9
+P 8700 1800
+F 0 "#PWR03" H 8700 1800 30  0001 C CNN
+F 1 "GND" H 8700 1730 30  0001 C CNN
+	1    8700 1800
+	1    0    0    -1  
+$EndComp
+Text Label 2950 5000 0    50   ~ 0
+RX3.3
+Text Label 2950 5200 0    50   ~ 0
+TX3.3
+$Comp
+L GND #PWR04
+U 1 1 51643E6E
+P 10350 3200
+F 0 "#PWR04" H 10350 3200 30  0001 C CNN
+F 1 "GND" H 10350 3130 30  0001 C CNN
+	1    10350 3200
+	-1   0    0    1   
+$EndComp
+Text Label 5500 3200 2    50   ~ 0
+3.3V
+$Comp
+L GND #PWR05
+U 1 1 5164714B
+P 3100 3700
+F 0 "#PWR05" H 3100 3700 30  0001 C CNN
+F 1 "GND" H 3100 3630 30  0001 C CNN
+	1    3100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 51683267
+P 5150 5900
+F 0 "#PWR06" H 5150 5900 30  0001 C CNN
+F 1 "GND" H 5150 5830 30  0001 C CNN
+	1    5150 5900
+	1    0    0    -1  
+$EndComp
+Text Label 5450 5100 2    50   ~ 0
+5V
+Text Label 5500 3300 2    50   ~ 0
+DFLT3.3
+Text Label 2700 3200 0    50   ~ 0
+RST3.3
+$Comp
+L TLV2452CDGKR U3
+U 1 1 516C3366
+P 4100 3350
+F 0 "U3" H 3550 3750 50  0000 C CNN
+F 1 "TLV2452CDGKR" H 4100 3350 50  0000 C CNN
+F 4 "DUAL_OPAMP" H 4100 3050 50  0000 C CNN "Description"
+	1    4100 3350
+	1    0    0    -1  
+$EndComp
+Text Label 2950 5100 0    50   ~ 0
+3.3V
+Text Label 5300 1450 2    50   ~ 0
+RST_EN
+Text Label 5300 1550 2    50   ~ 0
+DFLT_EN
+$Comp
+L TXB0106PWR U2
+U 1 1 516C6DA7
+P 4250 5350
+F 0 "U2" H 3800 5950 50  0000 C CNN
+F 1 "TXB0106PWR" H 4250 5850 50  0000 C CNN
+F 4 "VOLTAGE_TRANSLATOR" H 4250 4850 50  0000 C CNN "Description"
+	1    4250 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L TC1262-3.3VDB U4
+U 1 1 516C448D
+P 10000 1100
+F 0 "U4" H 9550 1449 50  0000 C CNN
+F 1 "TC1262-3.3VDB" H 10000 1350 50  0000 C CNN
+F 4 "VOLTAGE_REGULATOR" H 10000 850 50  0000 C CNN "Description"
+	1    10000 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ENABLE_JUMPERS P3
+U 1 1 51854F10
+P 4100 1500
+F 0 "P3" H 3650 1800 50  0000 C CNN
+F 1 "ENABLE_JUMPERS" H 4100 1700 50  0000 C CNN
+F 4 "HEADER" H 4100 1300 50  0000 C CNN "Description"
+	1    4100 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L AUX-4_INTERFACE P1
+U 1 1 51854F35
+P 1150 1800
+F 0 "P1" H 950 2900 50  0000 C CNN
+F 1 "AUX-4_INTERFACE" V 1350 1800 50  0000 C CNN
+F 4 "HEADER" H 1150 800 50  0000 C CNN "Description"
+	1    1150 1800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L I2C_INTERFACE P2
+U 1 1 51854F4E
+P 1150 4100
+F 0 "P2" H 950 4500 50  0000 C CNN
+F 1 "I2C_INTERFACE" V 1350 4100 50  0000 C CNN
+F 4 "HEADER" H 1150 3800 50  0000 C CNN "Description"
+	1    1150 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 51854FA3
+P 1800 2750
+F 0 "#PWR07" H 1800 2750 30  0001 C CNN
+F 1 "GND" H 1800 2680 30  0001 C CNN
+	1    1800 2750
+	-1   0    0    -1  
+$EndComp
+Text Label 2100 2650 2    50   ~ 0
+5V
+$Comp
+L GND #PWR08
+U 1 1 518551E7
+P 1800 4450
+F 0 "#PWR08" H 1800 4450 30  0001 C CNN
+F 1 "GND" H 1800 4380 30  0001 C CNN
+	1    1800 4450
+	-1   0    0    -1  
+$EndComp
+Text Label 2100 3950 2    50   ~ 0
+5V
+Wire Wire Line
+	5750 5200 5050 5200
+Wire Wire Line
+	5750 1050 5750 5200
+Wire Wire Line
+	5650 5000 5050 5000
+Wire Wire Line
+	5650 950  5650 5000
+Wire Wire Line
+	3350 5700 3450 5700
+Wire Wire Line
+	2600 5200 3450 5200
+Wire Wire Line
+	2950 5100 3450 5100
+Wire Wire Line
+	6150 3300 5000 3300
+Connection ~ 5100 3300
+Wire Wire Line
+	5100 3400 5000 3400
+Wire Wire Line
+	5100 3300 5100 3400
+Wire Wire Line
+	5150 5700 5150 5900
+Wire Wire Line
+	5050 5700 5150 5700
+Wire Wire Line
+	2500 3200 3200 3200
+Wire Wire Line
+	3200 3300 3100 3300
+Wire Wire Line
+	5000 3200 5500 3200
+Wire Wire Line
+	10850 5000 10850 4700
+Wire Wire Line
+	10350 4900 10350 4700
+Wire Wire Line
+	10350 4400 10350 4000
+Wire Wire Line
+	10850 4400 10850 4000
+Connection ~ 10350 3300
+Wire Wire Line
+	10850 3300 10850 3500
+Wire Wire Line
+	10350 3200 10350 3500
+Wire Wire Line
+	9850 3500 9850 3300
+Wire Wire Line
+	8700 1700 8700 1800
+Connection ~ 8700 1200
+Wire Wire Line
+	8700 1300 8700 1200
+Wire Wire Line
+	8250 1000 9200 1000
+Wire Wire Line
+	10800 1100 10900 1100
+Wire Wire Line
+	9200 1100 9100 1100
+Wire Wire Line
+	2700 5000 3450 5000
+Wire Wire Line
+	3350 5100 3350 5700
+Connection ~ 3350 5100
+Wire Wire Line
+	3100 3300 3100 3200
+Connection ~ 3100 3200
+Wire Wire Line
+	3200 3500 3100 3500
+Wire Wire Line
+	3100 3500 3100 3700
+Wire Wire Line
+	5050 5100 5450 5100
+Wire Wire Line
+	10900 1100 10900 1400
+Wire Wire Line
+	9100 1100 9100 1400
+Wire Wire Line
+	1700 2550 1800 2550
+Wire Wire Line
+	1800 2550 1800 2750
+Wire Wire Line
+	1700 2650 2100 2650
+Wire Wire Line
+	1700 4050 1800 4050
+Wire Wire Line
+	1800 4050 1800 4450
+Wire Wire Line
+	1700 3950 2100 3950
+Wire Wire Line
+	1700 1150 2850 1150
+Wire Wire Line
+	1700 1250 2750 1250
+Text Label 2100 1150 2    50   ~ 0
+RST5
+Text Label 2100 1250 2    50   ~ 0
+DFLT5
+Text Label 2100 950  2    50   ~ 0
+RX5
+Text Label 2100 1050 2    50   ~ 0
+TX5
+$Comp
+L T491A475K016AT C1
+U 1 1 51857021
+P 8700 1500
+F 0 "C1" V 8550 1500 50  0000 C CNN
+F 1 "T491A475K016AT" V 8850 1500 50  0000 C CNN
+F 4 "4.7uF" V 8950 1500 50  0000 C CNN "Description"
+	1    8700 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 3500 5000 3500
+Wire Wire Line
+	8250 1200 9200 1200
+$Comp
+L RN-171 U1
+U 1 1 5187D822
+P 7900 4650
+F 0 "U1" H 7050 6050 50  0000 C CNN
+F 1 "RN-171" H 7900 4750 50  0000 C CNN
+F 4 "WIFI_MODULE" H 7900 4550 50  0000 C CNN "Description"
+	1    7900 4650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9850 4400 9850 4000
+$Comp
+L ANTENNA AE1
+U 1 1 5187DC43
+P 7900 2600
+F 0 "AE1" H 7900 2750 50  0000 C CNN
+F 1 "ANTENNA" V 8100 2600 50  0000 C CNN
+	1    7900 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2800 7900 3000
+Wire Wire Line
+	7600 3000 7600 2900
+Wire Wire Line
+	7500 2900 7800 2900
+Wire Wire Line
+	7800 2900 7800 3000
+Wire Wire Line
+	7700 3000 7700 2900
+Connection ~ 7700 2900
+Wire Wire Line
+	8000 3000 8000 2900
+Wire Wire Line
+	8000 2900 8300 2900
+Wire Wire Line
+	8200 2900 8200 3000
+Wire Wire Line
+	8100 3000 8100 2900
+Connection ~ 8100 2900
+$Comp
+L GND #PWR09
+U 1 1 5187DE7A
+P 7500 2900
+F 0 "#PWR09" H 7500 2900 30  0001 C CNN
+F 1 "GND" H 7500 2830 30  0001 C CNN
+	1    7500 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 5187DE89
+P 8300 2900
+F 0 "#PWR010" H 8300 2900 30  0001 C CNN
+F 1 "GND" H 8300 2830 30  0001 C CNN
+	1    8300 2900
+	0    -1   -1   0   
+$EndComp
+Connection ~ 7600 2900
+Connection ~ 8200 2900
+$Comp
+L GND #PWR011
+U 1 1 5187DF83
+P 9200 3700
+F 0 "#PWR011" H 9200 3700 30  0001 C CNN
+F 1 "GND" H 9200 3630 30  0001 C CNN
+	1    9200 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 5187DF9C
+P 6600 3700
+F 0 "#PWR012" H 6600 3700 30  0001 C CNN
+F 1 "GND" H 6600 3630 30  0001 C CNN
+	1    6600 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR013
+U 1 1 5187DFAB
+P 9200 4300
+F 0 "#PWR013" H 9200 4300 30  0001 C CNN
+F 1 "GND" H 9200 4230 30  0001 C CNN
+	1    9200 4300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6700 4300 6300 4300
+Wire Wire Line
+	9100 4700 9500 4700
+Text Label 9500 4700 2    50   ~ 0
+3.3V
+$Comp
+L GND #PWR014
+U 1 1 5187E0B9
+P 6600 5600
+F 0 "#PWR014" H 6600 5600 30  0001 C CNN
+F 1 "GND" H 6600 5530 30  0001 C CNN
+	1    6600 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR015
+U 1 1 5187E0C8
+P 9200 5600
+F 0 "#PWR015" H 9200 5600 30  0001 C CNN
+F 1 "GND" H 9200 5530 30  0001 C CNN
+	1    9200 5600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8000 6300 8000 6700
+Text Label 8000 6700 1    50   ~ 0
+3.3V
+Wire Wire Line
+	6700 3700 6600 3700
+Wire Wire Line
+	9100 3700 9200 3700
+Wire Wire Line
+	9100 4300 9200 4300
+Wire Wire Line
+	9100 5600 9200 5600
+Wire Wire Line
+	5650 950  1700 950 
+Wire Wire Line
+	5750 1050 1700 1050
+Wire Wire Line
+	5400 2450 2350 2450
+Wire Wire Line
+	2350 2450 2350 3400
+Wire Wire Line
+	2350 3400 3200 3400
+Wire Wire Line
+	9100 4800 9850 4800
+Wire Wire Line
+	9100 4900 10350 4900
+Wire Wire Line
+	9100 5000 10850 5000
+Wire Wire Line
+	9850 3300 10850 3300
+Wire Wire Line
+	5800 5400 5800 6250
+Wire Wire Line
+	5800 6250 2700 6250
+Wire Wire Line
+	2700 6250 2700 5000
+Wire Wire Line
+	2600 5200 2600 6350
+Wire Wire Line
+	2600 6350 5900 6350
+Wire Wire Line
+	5900 6350 5900 5500
+Wire Wire Line
+	6000 4150 2500 4150
+Wire Wire Line
+	2500 4150 2500 3200
+Wire Wire Line
+	9100 5300 9600 5300
+Text Label 6300 4300 0    50   ~ 0
+3.3V
+$Comp
+L CR0805-FX-2400ELF R1
+U 1 1 5187F222
+P 9850 3750
+F 0 "R1" H 9850 3850 50  0000 C CNN
+F 1 "CR0805-FX-2400ELF" H 9850 3650 50  0000 C CNN
+F 4 "240_OHM" H 9850 3550 50  0000 C CNN "Description"
+	1    9850 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CR0805-FX-2400ELF R2
+U 1 1 5187F23B
+P 10350 3750
+F 0 "R2" H 10350 3850 50  0000 C CNN
+F 1 "CR0805-FX-2400ELF" H 10350 3650 50  0000 C CNN
+F 4 "240_OHM" H 10350 3550 50  0000 C CNN "Description"
+	1    10350 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CR0805-FX-2400ELF R3
+U 1 1 5187F254
+P 10850 3750
+F 0 "R3" H 10850 3850 50  0000 C CNN
+F 1 "CR0805-FX-2400ELF" H 10850 3650 50  0000 C CNN
+F 4 "240_OHM" H 10850 3550 50  0000 C CNN "Description"
+	1    10850 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L APT2012SGC D1
+U 1 1 5187F3E3
+P 9850 4550
+F 0 "D1" H 9850 4650 50  0000 C CNN
+F 1 "APT2012SGC" H 9850 4400 50  0000 C CNN
+F 4 "GREEN" H 9850 4300 50  0000 C CNN "Description"
+	1    9850 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L APT2012YC D2
+U 1 1 5187F3FC
+P 10350 4550
+F 0 "D2" H 10350 4650 50  0000 C CNN
+F 1 "APT2012YC" H 10350 4400 50  0000 C CNN
+F 4 "YELLOW" H 10350 4300 50  0000 C CNN "Description"
+	1    10350 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L APT2012EC D3
+U 1 1 5187F415
+P 10850 4550
+F 0 "D3" H 10850 4650 50  0000 C CNN
+F 1 "APT2012EC" H 10850 4400 50  0000 C CNN
+F 4 "RED" H 10850 4300 50  0000 C CNN "Description"
+	1    10850 4550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9850 4800 9850 4700
+Wire Wire Line
+	9600 5300 9600 2300
+Wire Wire Line
+	9600 2300 6150 2300
+Wire Wire Line
+	6150 2300 6150 3300
+Wire Wire Line
+	3300 1450 2850 1450
+Wire Wire Line
+	2850 1450 2850 1150
+Wire Wire Line
+	3300 1550 2750 1550
+Wire Wire Line
+	2750 1550 2750 1250
+Wire Wire Line
+	5400 1450 5400 2450
+Wire Wire Line
+	5800 5400 6700 5400
+Wire Wire Line
+	5900 5500 6700 5500
+Wire Wire Line
+	6700 5600 6600 5600
+Wire Wire Line
+	6000 4150 6000 4900
+Wire Wire Line
+	6000 4900 6700 4900
+$Comp
+L GND #PWR016
+U 1 1 51893FB5
+P 6600 4800
+F 0 "#PWR016" H 6600 4800 30  0001 C CNN
+F 1 "GND" H 6600 4730 30  0001 C CNN
+	1    6600 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6600 4800 6700 4800
+Wire Wire Line
+	4900 1450 5400 1450
+Wire Wire Line
+	4900 1550 6700 1550
+Wire Wire Line
+	6700 1550 6700 3500
+$EndSCHEMATC
