@@ -1,4 +1,4 @@
-update=Wed 19 Jun 2013 10:00:36 AM CDT
+update=Tue 03 Sep 2013 03:17:07 PM CDT
 version=1
 last_client=eeschema
 [cvpcb]
@@ -81,12 +81,10 @@ LibName29=contrib
 LibName30=valves
 LibName31=_roving_networks_
 LibName32=_microchip_
-LibName33=_vishay_
-LibName34=_panasonic_
-LibName35=_texas_instruments_
-LibName36=_headers_
-LibName37=_kemet_
-LibName38=_bourns_
-LibName39=_kingbright_
-LibName40=_special_
-LibName41=_on_semi_
+LibName33=_texas_instruments_
+LibName34=_headers_
+LibName35=_kemet_
+LibName36=_bourns_
+LibName37=_kingbright_
+LibName38=_special_
+LibName39=_on_semi_

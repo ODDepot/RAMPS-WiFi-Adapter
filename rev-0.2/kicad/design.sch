@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 19 Jun 2013 11:22:25 AM CDT
+EESchema Schematic File Version 2  date Tue 03 Sep 2013 03:17:11 PM CDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,8 +31,6 @@ LIBS:contrib
 LIBS:valves
 LIBS:_roving_networks_
 LIBS:_microchip_
-LIBS:_vishay_
-LIBS:_panasonic_
 LIBS:_texas_instruments_
 LIBS:_headers_
 LIBS:_kemet_
@@ -47,7 +45,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "RAMPS WiFi Adapter"
-Date "18 jun 2013"
+Date "3 sep 2013"
 Rev ".2"
 Comp "ODDepot.com, Finucane Design LLC"
 Comment1 "License: Creative Commons Attribution-ShareAlike (CC 3.0 BY-SA)"
@@ -498,26 +496,6 @@ $EndComp
 Wire Wire Line
 	6600 4800 6700 4800
 $Comp
-L CR0805-FX-4702ELF R6
-U 1 1 51B5DF5A
-P 2950 1150
-F 0 "R6" H 2950 1250 50  0000 C CNN
-F 1 "CR0805-FX-4702ELF" H 2950 1050 50  0000 C CNN
-F 4 "47_KOHM" H 2950 950 50  0000 C CNN "Description"
-	1    2950 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CR0805-FX-9102ELF R7
-U 1 1 51B5DF73
-P 3850 1150
-F 0 "R7" H 3850 1250 50  0000 C CNN
-F 1 "CR0805-FX-9102ELF" H 3850 1050 50  0000 C CNN
-F 4 "91_KOHM" H 3850 950 50  0000 C CNN "Description"
-	1    3850 1150
-	1    0    0    -1  
-$EndComp
-$Comp
 L GND #PWR4
 U 1 1 51B5DF8C
 P 4200 1150
@@ -525,26 +503,6 @@ F 0 "#PWR4" H 4200 1150 30  0001 C CNN
 F 1 "GND" H 4200 1080 30  0001 C CNN
 	1    4200 1150
 	0    -1   -1   0   
-$EndComp
-$Comp
-L CR0805-FX-4702ELF R8
-U 1 1 51B5E50E
-P 2950 2150
-F 0 "R8" H 2950 2250 50  0000 C CNN
-F 1 "CR0805-FX-4702ELF" H 2950 2050 50  0000 C CNN
-F 4 "47_KOHM" H 2950 1950 50  0000 C CNN "Description"
-	1    2950 2150
-	1    0    0    -1  
-$EndComp
-$Comp
-L CR0805-FX-9102ELF R9
-U 1 1 51B5E515
-P 3850 2150
-F 0 "R9" H 3850 2250 50  0000 C CNN
-F 1 "CR0805-FX-9102ELF" H 3850 2050 50  0000 C CNN
-F 4 "91_KOHM" H 3850 1950 50  0000 C CNN "Description"
-	1    3850 2150
-	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR18
@@ -730,4 +688,44 @@ Text Label 4900 4450 0    50   ~ 0
 RST
 Text Label 4900 4550 0    50   ~ 0
 DFLT
+$Comp
+L CR0805-FX-4701ELF R6
+U 1 1 522643D6
+P 2950 1150
+F 0 "R6" H 2950 1250 50  0000 C CNN
+F 1 "CR0805-FX-4701ELF" H 2950 1050 50  0000 C CNN
+F 4 "4.7_KOHM" H 2950 950 50  0000 C CNN "Description"
+	1    2950 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CR0805-FX-4701ELF R8
+U 1 1 522643EF
+P 2950 2150
+F 0 "R8" H 2950 2250 50  0000 C CNN
+F 1 "CR0805-FX-4701ELF" H 2950 2050 50  0000 C CNN
+F 4 "4.7_KOHM" H 2950 1950 50  0000 C CNN "Description"
+	1    2950 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CR0805-FX-9101ELF R7
+U 1 1 52264414
+P 3850 1150
+F 0 "R7" H 3850 1250 50  0000 C CNN
+F 1 "CR0805-FX-9101ELF" H 3850 1050 50  0000 C CNN
+F 4 "9.1_KOHM" H 3850 950 50  0000 C CNN "Description"
+	1    3850 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CR0805-FX-9101ELF R9
+U 1 1 5226442D
+P 3850 2150
+F 0 "R9" H 3850 2250 50  0000 C CNN
+F 1 "CR0805-FX-9101ELF" H 3850 2050 50  0000 C CNN
+F 4 "9.1_KOHM" H 3850 1950 50  0000 C CNN "Description"
+	1    3850 2150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
