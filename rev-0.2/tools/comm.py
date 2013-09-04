@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# This script is a simple non-blocking interface for serial communications with the RN171.
+# Upload debug.ino before using!
+
 
 import argparse
 import serial
@@ -14,8 +17,8 @@ class CustomHelpFormatter(argparse.HelpFormatter):
 
 
 parser = argparse.ArgumentParser(formatter_class=CustomHelpFormatter)
-parser.add_argument("-d", "--device", help="set device location, e.g. \"/dev/ttyUSB0\"")
-parser.add_argument("-b", "--baudrate", help="set baudrate, e.g. \"115200\"")
+parser.add_argument("-d", "--device", help="set device location, e.g. \"/dev/ttyACM0\"")
+parser.add_argument("-b", "--baudrate", help="set baudrate, e.g. \"9600\"")
 parser.add_argument("-f", "--flush", choices=["input", "output", "both"], help="flush (input, output, both) buffer(s) upon startup")
 args = parser.parse_args()
 
@@ -36,9 +39,9 @@ class DaemonThread(threading.Thread):
 
 
 if not args.device:
-    args.device = "/dev/ttyUSB0"
+    args.device = "/dev/ttyACM0"
 if not args.baudrate:
-    args.baudrate = '115200'
+    args.baudrate = "9600"
 
 conn = serial.Serial(args.device, args.baudrate, timeout=0)
 
@@ -58,7 +61,6 @@ print "Device: %s" % args.device
 print "Baudrate: %s" % args.baudrate
 print "Enter 'q' to quit."
 print
-conn.write('$$$')
 while True:
     data = raw_input()
     if data == "q":
