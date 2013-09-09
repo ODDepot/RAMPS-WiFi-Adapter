@@ -1,7 +1,7 @@
-// This sketch configures the RN171 on the RAMPS WiFi Adapter. If successfully configured, the
-// RN171 will associate with your AP (wireless router). Use the Arduino Serial Monitor to observe
-// output (and the IP address to connect to). Modify the following settings for your router.
-// Make sure the Reset and Default pin jumpers are in place!
+// This sketch configures the RN171 on the RAMPS WiFi Adapter. If successful, the RN171 will
+// associate with your wireless network. Use the Arduino IDE Serial Monitor to observe output.
+// Modify the following settings for your router. Make sure the Reset and Default pin jumpers are
+// in place!
 
 //////////////////////////////////////////////////
 // Modify these settings to connect to your router
@@ -24,8 +24,9 @@ int Auth_Type = 2; // WPA2
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
-
-String device_id = "RAMPS WiFi Adapter 9";  // If using more than one adapter, each device_id should be unique
+// Configuration settings for the RN171
+long baud_rate = 115200;  // The baud rate between the RN171 and Mega, this must match the baud rate set in Marlin
+String device_id = "RAMPS WiFi Adapter";  // If using more than one adapter, each device_id should be unique
 
 int RST = 23;
 int DFLT = 25;
@@ -40,6 +41,9 @@ void establish_comm() {
 }
 
 void send_command(String str_command) {
+  if (str_command != "$$$") {
+      str_command += "\r\n";
+  }
   str_command.toCharArray(command, command_buffer_size);
   Serial2.write(command);
 }
@@ -110,31 +114,34 @@ void setup() {
   send_command("$$$");
   print_response();
 
-  send_command("\r\n");  // A "hiccup" sometimes returns an error for the first commmand after "$$$", so send this and ignore response
+  send_command("");  // A "hiccup" sometimes returns an error for the first commmand after "$$$", so send this and ignore response
   clear_receive_buffer();
 
-  send_command(String(("set option device_id ") + escape_space(device_id) + "\r\n"));
+  send_command(String(("set option device_id ") + escape_space(device_id)));
   print_response();
   
-  send_command((String("set wlan ssid ") + escape_space(SSID) + "\r\n"));
+  send_command((String("set wlan ssid ") + escape_space(SSID)));
   print_response();
 
-  send_command((String("set wlan auth ") + Auth_Type + "\r\n"));
+  send_command((String("set wlan auth ") + Auth_Type));
   print_response();
 
-  send_command((String("set wlan phrase ") + escape_space(Passphrase) + "\r\n"));
+  send_command((String("set wlan phrase ") + escape_space(Passphrase)));
   print_response();
 
-  send_command("set wlan linkmon 0\r\n");  // WiFly de-authenticates and re-authenticates continously with the AP when this is > 0, not sure why...
+  send_command("set wlan linkmon 0");  // WiFly de-authenticates and re-authenticates continously with the AP when this is > 0, not sure why...
   print_response();
   
-  send_command("set wlan join 1\r\n");
+  send_command("set wlan join 1");
   print_response();
   
-  send_command("set ip dhcp 1\r\n");
+  send_command("set ip dhcp 1");
   print_response();
 
-  send_command("save\r\n");
+  send_command((String("set uart baud ") + baud_rate));
+  print_response();
+
+  send_command("save");
   print_response();
   
   // Reset the RN171 again
@@ -145,15 +152,4 @@ void setup() {
 }
 
 void loop() {
-  delay(1000);
-  send_command("$$$");
-  clear_receive_buffer();
-
-  delay(1000);
-  send_command("\r\n");  // A "hiccup" sometimes returns an error for the first commmand after "$$$", so send this and ignore response
-  clear_receive_buffer();
-
-  delay(10000);
-  send_command("get ip a\r\n");
-  print_response();
 }
